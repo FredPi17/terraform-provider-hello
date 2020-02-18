@@ -23,7 +23,7 @@ func Provider() *schema.Provider {
 		        Required: true,
 		    },
 		},*/
-		DataSourcesMap: map[string]*schema.Resource{
+		ResourcesMap: map[string]*schema.Resource{
 			"hello_world": resourceServer(),
 		},
 		ConfigureFunc: providerConfigure,
