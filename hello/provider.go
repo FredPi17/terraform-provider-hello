@@ -5,9 +5,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-func Provider() terraform.ResourceProvider {
+func Provider() *terraform.ResourceProvider {
 	return &schema.Provider{
-		Schema: map[string]*schema.Schema{},
 		/*Schema: map[string]*schema.Schema {
 		    "nom": &schema.Schema {
 		        Type: schema.TypeString,
@@ -15,7 +14,7 @@ func Provider() terraform.ResourceProvider {
 		        Required: true,
 		    },
 		},*/
-		ResourcesMap: map[string]*schema.Resource{
+		DataSourcesMap: map[string]*schema.Resource{
 			"hello_world": resourceServer(),
 		},
 		ConfigureFunc: providerConfigure,
