@@ -5,8 +5,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-func Provider() *terraform.ResourceProvider {
+func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
+		Schema: map[string]*schema.Schema{},
 		/*Schema: map[string]*schema.Schema {
 		    "nom": &schema.Schema {
 		        Type: schema.TypeString,
