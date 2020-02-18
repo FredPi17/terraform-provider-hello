@@ -15,7 +15,7 @@ func Provider() terraform.ResourceProvider {
 		        Required: true,
 		    },
 		},*/
-		DataSourcesMap: map[string]*schema.Resource{
+		ResourcesMap: map[string]*schema.Resource{
 			"hello_world": resourceServer(),
 		},
 		ConfigureFunc: providerConfigure,
