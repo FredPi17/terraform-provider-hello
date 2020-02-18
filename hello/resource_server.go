@@ -6,15 +6,15 @@ import (
 
 func resourceServer() *schema.Resource {
 
-	return &schema.Provider {
+	return &schema.Resource{
 		Create: resourceServerCreate,
-		Read: resourceServerRead,
+		Read:   resourceServerRead,
 		Update: resourceServerUpdate,
 		Delete: resourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
 			"nom": &schema.Schema{
-				Type: schema.TypeString,
+				Type:     schema.TypeString,
 				Required: true,
 			},
 		},
