@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/FredPi17/terraform-provider-hello/hello"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
@@ -10,7 +9,7 @@ import (
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: func() terraform.ResourceProvider {
-			return hello.Provider()
+			return Provider()
 		},
 	})
 }
@@ -38,7 +37,6 @@ func providerConfigure(d *schema.ResourceData) (interface{}, error) {
 }
 
 func resourceServer() *schema.Resource {
-
 	return &schema.Resource{
 		Create: resourceServerCreate,
 		Read:   resourceServerRead,
