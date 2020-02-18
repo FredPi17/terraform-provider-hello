@@ -32,8 +32,16 @@ func Provider() *schema.Provider {
 }
 
 func providerConfigure(d *schema.ResourceData) (interface{}, error) {
+	var client Client
+	return &client, nil
+}
 
-	return nil, nil
+//Config is the config for the client.
+type Config struct {
+}
+
+//Client is the client itself. Since we already have access to the shell no real provisioning needs to be done
+type Client struct {
 }
 
 func resourceServer() *schema.Resource {
