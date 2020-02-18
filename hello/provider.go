@@ -2,9 +2,10 @@ package hello
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-func Provider() *schema.Provider {
+func Provider() *terraform.ResourceProvider {
 	return &schema.Provider{
 		/*Schema: map[string]*schema.Schema {
 		    "nom": &schema.Schema {
@@ -13,7 +14,7 @@ func Provider() *schema.Provider {
 		        Required: true,
 		    },
 		},*/
-		ResourcesMap: map[string]*schema.Resource{
+		DataSourcesMap: map[string]*schema.Resource{
 			"hello_world": resourceServer(),
 		},
 		ConfigureFunc: providerConfigure,
