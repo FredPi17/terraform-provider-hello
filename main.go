@@ -83,6 +83,7 @@ func createHello(d *schema.ResourceData, m interface{}, stack []string) error {
 	l := d.Get("create").([]interface{})
 	c := l[0].(map[string]interface{})
 	command := c["create"].(string)
+	vars := d.Get("environment").(map[string]interface{})
 	environment := readEnvironmentVariables(vars)
 	workingDirectory := d.Get("working_directory").(string)
 	d.MarkNewResource()
@@ -101,7 +102,7 @@ func createHello(d *schema.ResourceData, m interface{}, stack []string) error {
 	//if create doesn't return a new state then must call the read operation
 	if newState == nil {
 		stack = append(stack, "read")
-		if err := read(d, meta, stack); err != nil {
+		if err := read(d, m, stack); err != nil {
 			return err
 		}
 	} else {
