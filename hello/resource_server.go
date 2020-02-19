@@ -24,7 +24,7 @@ func resourceServer() *schema.Resource {
 func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 	nom := d.Get("nom").(string)
 	d.SetId(nom)
-	return resourceServerCreate(d, m)
+	return nil
 }
 
 func resourceServerRead(d *schema.ResourceData, m interface{}) error {
