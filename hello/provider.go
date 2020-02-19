@@ -7,13 +7,6 @@ import (
 
 func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
-		/*Schema: map[string]*schema.Schema {
-		    "nom": &schema.Schema {
-		        Type: schema.TypeString,
-		        Description: "Your name",
-		        Required: true,
-		    },
-		},*/
 		ResourcesMap: map[string]*schema.Resource{
 			"hello_world": resourceServer(),
 		},
